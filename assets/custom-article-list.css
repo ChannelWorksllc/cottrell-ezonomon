@@ -1,0 +1,73 @@
+.custom-article-list {
+    padding: 50px 100px 50px 100px;
+}
+
+.custom-article-list-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.custom-article-list-div1 {
+    margin: 20px 0px 20px 0px;
+}
+
+.custom-article-list-div2 {
+    margin: 20px 0px 20px 0px;
+}
+
+
+/* ↓↓↓以下は最終的には、common.cssに追加する↓↓↓ */
+.common-fit2-ul {
+    --auto-grid-min-size: 200px;
+    display: grid;
+    grid-gap: 25px 25px;
+    grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
+    margin: 0;
+    padding: 0;
+}
+
+.common-fit2-li {
+    margin: 0 0 30px 0;
+    padding: 0;
+    width: 100%;
+}
+
+.common-fit2-div1 {
+    margin: 10px auto;
+    overflow: hidden;/* 追加：figureタグサイズより、子要素の画像が大きい場合、はみ出た部分は隠すようにする。 */
+    width: 100%;
+}
+
+.common-fit2-img {
+    border-radius: 10px;
+    display: block;/* 追加：インライン要素からブロック要素に変更する */
+    height: 100%;/* 追加：imgタグの高さをfigureタグに合わせる */
+    object-fit: contain;/* 追加：親要素の枠に対して、縦横比を維持した状態でサイズ調整する。様子を見て、「contain」か「cover」で調整する。 */
+    transition-duration: 0.5s;/* ホバーから戻る時の時間を制御 */
+    transition-property: all;/* ホバーから戻る時の時間を制御する対象を選択 */
+    width: 100%;
+}
+
+.common-fit2-img:hover {
+    transform: scale(0.9,0.9);
+    transition-duration: 0.5s;
+}
+
+.common-fit2-div2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+}
+
+.common-fit2-div4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0px 10px 0px;
+    text-align: center;
+}
+
+.common-fit2-span {
+    background: linear-gradient(transparent 90%, #767b7e 0%);
+}

@@ -1,0 +1,93 @@
+{%- assign blog = blogs[section.settings.article_list] -%}
+{{ 'custom-article-list.css' | asset_url | stylesheet_tag }}
+
+
+<section id="section-article-list" class="custom-article-list">
+    <div class="custom-article-list-div1">
+        <p class="custom-article-list-title">
+            {{ section.settings.title | escape }}
+        </p>
+    </div>
+
+    <div class="custom-article-list-div2">
+        <p class="custom-article-list-text">
+            {{ section.settings.text | escape }}
+        </p>
+    </div>
+
+    <ul class="common-fit2-ul">
+        {% for article in blog.articles limit: section.settings.post_limit %}
+            <li class="common-fit2-li common-fadein">
+                <a href="{{ article.url }}">
+                    <div class="common-fit2-div1">
+                        <img class="common-fit2-img" src="{{ article.image.src | img_url: 'master' }} ">
+                    </div>
+
+                    <div class="common-fit2-div2">
+                        <p>{{ article.title }}</p>
+                    </div>
+                </a>
+
+                <div class="common-fit2-div3">
+                    <p>{{ article.excerpt }}</p>
+                    {% comment %} <p>{{ article.excerpt | truncatewords:6 | truncate:30 }}</p> {% endcomment %}
+                </div>
+
+                <div class="common-fit2-div4">
+                    <a href="https://portfolio006.myshopify.com/blogs/concept/{{ article.handle | split: "/" | last }}"><span class="common-fit2-span">詳しく見る ></span></a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</section>
+
+{% schema %}
+{
+    "name": "カスタム_記事一覧",
+    "settings": [
+        {
+        "id": "title",
+        "type": "text",
+        "label": "見出し",
+        "default": "カスタム_記事一覧のタイトル"
+        },
+        {
+        "id": "text",
+        "type": "text",
+        "label": "見出し",
+        "default": "カスタム_記事一覧の説明文"
+        },
+        {
+        "id": "article_list",
+        "type": "blog",
+        "label": "表示する記事を選択"
+        },
+        {
+        "id": "article_number_list",
+        "type": "range",
+        "label": "表示数を選択",
+        "min": 1,
+        "max": 6,
+        "step": 1,
+        "default": 3
+        },
+        {
+        "id": "article_list_date",
+        "type": "checkbox",
+        "label": "日付を表示する",
+        "default": true
+        },
+        {
+        "id": "article_list_category",
+        "type": "checkbox",
+        "label": "カテゴリーを表示する",
+        "default": true
+        }
+    ],
+    "presets": [
+        {
+        "name": "カスタム_記事一覧"
+        }
+    ]
+}
+{% endschema %}
