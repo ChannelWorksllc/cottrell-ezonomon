@@ -1,0 +1,153 @@
+body {
+  margin: 0px 50px 0px 50px !important;
+}
+
+header {
+  background-color: antiquewhite;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+main {
+  margin: 100px 0px 0px 0px;
+}
+
+.header-nav {
+  height: 100px;
+  line-height: 100px;
+}
+
+.header-ul {
+  display: flex;
+  height: 150px;
+  justify-content: space-around;
+  line-height: 150px;
+}
+
+.header-figure {
+  align-items: center;
+  display: flex;
+  height: 100px;
+  width: 100px;
+}
+
+.header-img {
+  width: 100%;
+}
+
+/*
+*JQドロップダウン
+*/
+
+.dropdwn {
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+}
+
+.header-ul {
+  list-style-type: none;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+
+.header-ul1 {
+  --auto-grid-min-size: 200px;
+  display: grid;
+  grid-gap: 10px 10px;
+  grid-template-columns: repeat(auto-fit, minmax(var(--auto-grid-min-size), 1fr));
+  /* padding: 50px; */
+}
+
+.header-ul>li {
+  height: 100px;
+  line-height: 100px;
+}
+
+.header-li {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  height: 100px;
+  line-height: 100px;
+  max-width: 240px;
+  padding: 0px 5px 0px 0px;
+  position: relative;
+}
+
+.dropdwn_menu {
+  background-color: #F7F4F0 !important;
+  display: none;
+  left: 50%;
+  padding: 10px 0 10px 0;
+  position: absolute;
+  top: 100px;
+  transform: translate(-50%,0%);
+  width: 200px;
+  z-index: 10;
+
+  box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+}
+
+.header-li2 {
+  display: inline;
+  height: 50px;
+  line-height: 50px;
+  margin: 0px 5px 0px 5px;
+}
+
+.header-li2:hover {
+  background-color: #eee;
+  font-weight: bold;
+}
+
+.header-ul>li:hover {
+  margin: 0px 0px 0px 0px;
+  background: linear-gradient(transparent 90%, #5A6268 0%);
+}
+
+
+.header-li1-a {
+  padding: 0;
+}
+
+.header-fig1 {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.header-fig1-img0 {
+  display: block;
+  -o-object-fit: contain;
+      object-fit: contain;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.header-fig1-img1 {
+  display: block;
+  height: 75%;
+  -o-object-fit: contain;
+      object-fit: contain;
+  margin: 0 auto;
+  width: 75%;
+}
+
+.header-p1 {
+  display: block;
+  font-size: 15px;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  text-align: center;
+  width: 150px;
+}
